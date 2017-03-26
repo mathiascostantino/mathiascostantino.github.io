@@ -1,0 +1,11 @@
+body {
+    background-color: blue;
+    background-size: cover;
+    font-family; Arial;
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
