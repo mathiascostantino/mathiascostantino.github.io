@@ -109,6 +109,44 @@
             border: 4px green solid;
 
         }
+
+        li {
+
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 16pt;
+
+
+        }
+
+        progress {
+
+            width: 70%;
+            height: 20px;
+            color: #3fb6b2;
+            background: #efefef;
+
+        }
+
+        progress::-webkit-progress-bar {
+
+            background: #efefef;
+
+        }
+
+        progress::-webkit-progress-value {
+
+            background: #3fb6b2;
+
+        } 
+
+        progress::-moz-progress-bar {
+
+            color: #3fb6b2;
+            background: #efefef;
+
+        }
         
         </style>
 
@@ -119,7 +157,7 @@
         <div id="header">
             <br />
             <img src="avatar.png" class="logo">
-            <p class="scritta">Mathias Costantino'site</p>
+            <p class="scritta">Mathias Costantino's site</p>
             <br />
         </div> 
 
@@ -182,6 +220,37 @@
                 <br />
             </center>
             </div>
+
+            <br />
+
+            <div id="tutorial">
+                    <br />
+                    <h1><span>Competenze</span></h1>
+                        <ul>
+                            <br />
+                            <li>HTML 100% 
+                            <br />
+                            <br />
+                                <progress min="0" max="100" value="100"></progress>
+                            </li>
+                            <br />
+                            <br />
+                            <li>CSS 25% 
+                            <br />
+                                <progress min="0" max="100" value="25"></progress>
+                            </li>
+                            <br />
+                            <br />
+                            <li>JavaScript 0%
+                            <br />
+                                <progress min="0" max="100" value="0"></progress>
+                            </li>
+                            <br />
+                            <br />
+                        </ul>
+            </div>
+
+            <br />
 
     </body>
 </html>
