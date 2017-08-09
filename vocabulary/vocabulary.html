@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<title>vocabulary</title>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<style type="text/css">
+
+		#italy {
+			position: relative;
+			bottom: 200px;
+			left: 150px;
+		}
+
+		#uk {
+			position: relative;
+			left: 685px;
+			bottom: 200px;
+		}
+
+		h1 {
+			font-family: cursive;
+			color: black;
+		}
+
+		p {
+			font-family: cursive;
+		}
+
+	</style>
+	<body style="background-image: url(background.jpg);">
+		<center>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h1>dall'Italiano all'inglese</h1>
+			<h1>From Italian to English</h1>
+			<br />
+			<br />
+			<p id ="question"></p>
+			<input type="text" id="answer">
+			<button id="confirm">conferma</button>
+			<br />
+			<p id="result"></p>
+			<br />
+		</center>
+		<img src="italy.png" id="italy">
+		<img src="uk.png" id="uk">
+	</body>
+	<script>
+		alert("mi raccomando, scrivi le parole tutte in minuscolo, anche le prime lettere, cosi da non creare qualche errore nel programma, grazie mille e buona traduzione!");
+		var dict = {"albania":"albania", "albanese": "albanian", "americano": "american", "argentina": "argentina", "argentino": "argentinian", "brasile": "brazil", "brasiliano": "brazilian", "canada": "canada", "canadese": "canadian", "cina": "china", "cinese": "chinese", "inghilterra": "england", "inglese": "english", "francia": "france", "francese": "french", "tedesco": "german", "germania": "germany", "gran bretagna": "great britain", "irlanda": "ireland", "irlandese": "irish", "italiano": "italian", "italia": "italy", "giappone": "japan", "giapponese": "japan", "messicano": "mexican", "messico": "mexico", "polonia": "poland", "polacco": "polish", "russia": "russia", "russo": "russian", "scozia": "scotland", "scozzese": "scottish", "spagna": "spain",};
+
+		var keys = Object.keys(dict);
+		var question = "";
+		var choose = "";
+		function ask() {
+			choose = Math.floor((Math.random() * (keys.length-1)) + 1);
+			question = keys[choose];
+			$("#question").html("Traduci in inglese:  '"+question+"'");
+		}
+		$(
+			function(){
+				ask();
+				$("#confirm").on("click",
+					function () {
+						answer = $("#answer").val().toLowerCase();
+						if ( answer == dict[question]) {
+							$("#result").html("<font color='00ff00'>Ultima risposta corretta!</font><br>Risposta data: '"+answer+"'<br>Risposta corretta: '"+dict[question]+"'");
+						}
+						else {
+							$("#result").html("<font color='ff0000'>Ultima risposta errata!</font><br>Risposta data: '"+answer+"'<br>Risposta corretta: '"+dict[question]+"'");
+						}
+						$("#answer").val(""); 
+						ask();
+					}
+				);
+				
+			}
+		)
+	</script>
+</html>
